@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Lumaa Salon</title>
 
-  <link rel="icon" type="image/jpeg" href="Lumaa Logo Fav Icon- Olive Green.jpg">
-  <link rel="apple-touch-icon" href="Lumaa Logo Fav Icon- Olive Green.jpg">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="Lumaa Logo Fav Icon- Olive Green.jpg" />
+  <link rel="apple-touch-icon" href="Lumaa Logo Fav Icon- Olive Green.jpg" />
 
   <style>
+    @font-face {
+      font-family: "Manrope";
+      src: url("Manrope.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
     @font-face {
       font-family: "Ignogito";
       src: url("Ignogito.ttf") format("truetype");
@@ -21,314 +25,266 @@
       font-display: swap;
     }
 
+    :root {
+      --bg: #F1F1F1;
+      --logo-olive: #9CA176;
+      --headline-brown: #917A68;
+      --button-olive: #9CA176;
+      --card-brown: #563C2F;
+      --footer-olive: #888C65;
+      --white: #ffffff;
+      --dark: #2c2c2c;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    :root {
-      --cream: #EED9BF;
-      --olive: #9CA175;
-      --white-soft: #F1F1F1;
-      --brown: #937B67;
-      --dark-olive: #30392C;
-      --deep-olive: #1F2B21;
-      --soft-shadow: rgba(31, 43, 33, 0.45);
+      -webkit-tap-highlight-color: transparent;
     }
 
     html,
     body {
       width: 100%;
-      height: 100%;
-      font-family: "Manrope", sans-serif;
-      background: var(--olive);
-      overflow: hidden;
+      min-height: 100%;
+      background: var(--bg);
+      font-family: "Manrope", Arial, sans-serif;
+      color: var(--dark);
+      overflow-x: hidden;
     }
 
     body {
-      color: var(--dark-olive);
+      min-height: 100dvh;
     }
 
     .page {
       width: 100%;
-      height: 100svh;
-      position: relative;
-      background:
-        radial-gradient(circle at 18% 8%, rgba(238, 217, 191, 0.12), transparent 25%),
-        radial-gradient(circle at 84% 18%, rgba(147, 123, 103, 0.28), transparent 28%),
-        radial-gradient(circle at 50% 92%, rgba(238, 217, 191, 0.38), transparent 38%),
-        linear-gradient(
-          180deg,
-          #1F2B21 0%,
-          #34432F 24%,
-          #6F7955 52%,
-          #9CA175 78%,
-          #B5B88D 100%
-        );
+      min-height: 100dvh;
+      background: var(--bg);
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: clamp(8px, 1.6svh, 18px) 16px;
-      overflow: hidden;
     }
 
-    .page::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(120deg, rgba(255,255,255,0.06) 0%, transparent 28%, rgba(238,217,191,0.12) 54%, transparent 78%),
-        repeating-linear-gradient(
-          135deg,
-          rgba(241,241,241,0.045) 0px,
-          rgba(241,241,241,0.045) 1px,
-          transparent 1px,
-          transparent 18px
-        );
-      pointer-events: none;
-    }
-
-    .page::after {
-      content: "";
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      right: -180px;
-      top: -160px;
-      border-radius: 50%;
-      background: rgba(238, 217, 191, 0.12);
-      filter: blur(8px);
-      pointer-events: none;
-    }
-
-    .poster {
-      position: relative;
-      z-index: 2;
-      width: min(100%, 860px);
-      height: 100%;
-      text-align: center;
+    .content {
+      width: min(100%, 980px);
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      padding:
+        max(38px, env(safe-area-inset-top))
+        clamp(18px, 4vw, 58px)
+        0;
     }
 
-    .brand {
+    .logo-wrap {
       width: 100%;
       display: flex;
       justify-content: center;
-      align-items: center;
+      margin-top: clamp(10px, 3vh, 48px);
+      margin-bottom: clamp(54px, 8vh, 98px);
     }
 
     .brand-logo {
-      width: min(370px, 76vw);
-      max-height: clamp(80px, 17svh, 175px);
+      width: min(380px, 66vw);
       height: auto;
       display: block;
-      margin: 0 auto;
       object-fit: contain;
-      mix-blend-mode: normal !important;
-      filter: none !important;
-      background: transparent;
-      transform: translateX(clamp(-86px, -6vw, -46px));
     }
 
-    .experience-box {
-      width: min(94%, 740px);
-      margin: clamp(62px, 8svh, 96px) auto 0;
-      background: linear-gradient(180deg, rgba(31,43,33,0.98), rgba(48,57,44,0.97));
-      border: 1px solid rgba(238,217,191,0.78);
-      border-radius: clamp(86px, 15svh, 180px) clamp(86px, 15svh, 180px) 24px 24px;
-      padding:
-        clamp(28px, 4svh, 44px)
-        clamp(14px, 4vw, 34px)
-        clamp(18px, 2.8svh, 34px);
-      box-shadow: 0 30px 80px var(--soft-shadow);
-      overflow: visible;
+    .hero-copy {
+      width: 100%;
+      text-align: center;
+      color: var(--headline-brown);
+      margin-bottom: clamp(26px, 4vh, 42px);
     }
 
-    .choose {
-      margin-bottom: clamp(22px, 4.2svh, 44px);
-      color: var(--white-soft);
+    .headline {
+      font-family: "Ignogito", "Manrope", sans-serif;
+      font-size: clamp(2.4rem, 7.5vw, 5.25rem);
+      font-weight: normal;
+      line-height: 0.92;
+      letter-spacing: 0.01em;
+      color: var(--headline-brown);
+      white-space: nowrap;
     }
 
-    .choose-small {
-      font-size: clamp(0.64rem, 1.2svh, 0.95rem);
-      letter-spacing: clamp(0.22em, 0.68vw, 0.44em);
-      font-weight: 800;
-      color: var(--white-soft);
+    .subline {
+      margin-top: clamp(12px, 1.7vh, 20px);
+      font-size: clamp(1rem, 2.2vw, 1.55rem);
+      letter-spacing: clamp(0.28em, 1.1vw, 0.62em);
+      font-weight: 400;
+      color: var(--headline-brown);
       text-transform: uppercase;
     }
 
-    .choose-big {
-      font-size: clamp(2.6rem, 7svh, 5.9rem);
-      line-height: 0.95;
-      color: var(--cream);
-      font-weight: 800;
-      letter-spacing: -0.06em;
+    .presence-pill {
+      margin-top: clamp(28px, 4vh, 40px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: min(540px, 82vw);
+      min-height: clamp(54px, 7vh, 76px);
+      padding: 0 clamp(24px, 5vw, 44px);
+      background: var(--button-olive);
+      color: var(--white);
+      border-radius: 999px;
+      font-family: "Ignogito", "Manrope", sans-serif;
+      font-size: clamp(1.45rem, 4vw, 2.75rem);
+      font-weight: normal;
+      line-height: 1;
+      box-shadow: 0 12px 28px rgba(156, 161, 118, 0.18);
+      white-space: nowrap;
     }
 
     .cards {
+      width: min(100%, 820px);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: clamp(12px, 3vw, 34px);
-      margin-top: clamp(10px, 2svh, 22px);
+      gap: clamp(26px, 5vw, 58px);
+      margin-top: clamp(54px, 8vh, 82px);
+      margin-bottom: clamp(54px, 7vh, 82px);
     }
 
     .card {
       position: relative;
-      height: clamp(190px, 34svh, 390px);
-      cursor: pointer;
-      border: 1px solid rgba(238,217,191,0.78);
-      border-radius: clamp(72px, 13svh, 130px) clamp(72px, 13svh, 130px) 18px 18px;
-      background: #111;
-      overflow: visible;
-      box-shadow: 0 18px 34px rgba(0,0,0,0.24);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card-photo {
-      width: 100%;
-      height: 100%;
-      border-radius: clamp(72px, 13svh, 130px) clamp(72px, 13svh, 130px) 18px 18px;
+      height: clamp(360px, 48vw, 520px);
+      border-radius: 48% 48% 28px 28px / 34% 34% 28px 28px;
       overflow: hidden;
-      position: relative;
+      cursor: pointer;
+      background: var(--card-brown);
+      box-shadow: 0 20px 40px rgba(86, 60, 47, 0.18);
+      border: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .card-photo img {
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 26px 48px rgba(86, 60, 47, 0.25);
+    }
+
+    .card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
-      filter: grayscale(0.2) brightness(0.58) contrast(1.08);
-      transition: transform 0.45s ease, filter 0.45s ease;
+      transition: transform 0.4s ease;
     }
 
-    .card-photo::after {
+    .card:hover img {
+      transform: scale(1.04);
+    }
+
+    .card::after {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.45) 48%, transparent 72%);
+        linear-gradient(
+          to top,
+          rgba(86, 60, 47, 1) 0%,
+          rgba(86, 60, 47, 0.9) 18%,
+          rgba(86, 60, 47, 0.45) 40%,
+          rgba(86, 60, 47, 0.05) 72%
+        );
       pointer-events: none;
-    }
-
-    .monogram {
-      position: absolute;
-      top: clamp(-27px, -3svh, -18px);
-      left: 50%;
-      transform: translateX(-50%);
-      width: clamp(42px, 7svh, 62px);
-      height: clamp(42px, 7svh, 62px);
-      border-radius: 50%;
-      overflow: hidden;
-      z-index: 5;
-      border: 2px solid var(--cream);
-      background: var(--olive);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.28);
-    }
-
-    .monogram img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
     }
 
     .card-content {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: clamp(14px, 2.8svh, 30px);
-      z-index: 4;
-      color: var(--white-soft);
-      text-align: center;
-      padding: 0 8px;
+      bottom: clamp(28px, 4.6vw, 46px);
+      z-index: 2;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 18px;
     }
 
-    .card-content h3 {
-      font-size: clamp(1.8rem, 4.9svh, 3.1rem);
+    .card-title {
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: clamp(2.6rem, 6vw, 4.55rem);
       font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1;
+      letter-spacing: -0.06em;
+      line-height: 0.9;
       text-transform: lowercase;
-      color: var(--white-soft);
-      text-shadow: 0 3px 12px rgba(0,0,0,0.6);
+      color: var(--white);
     }
 
-    .card-content p {
-      margin-top: 7px;
-      font-size: clamp(0.52rem, 1.05svh, 0.86rem);
-      letter-spacing: clamp(0.18em, 0.55vw, 0.34em);
-      color: var(--cream);
-      font-weight: 800;
-      text-transform: uppercase;
+    .card-line {
+      width: min(70%, 250px);
+      height: 3px;
+      background: rgba(255, 255, 255, 0.92);
+      margin-top: clamp(8px, 1.2vw, 12px);
+      margin-bottom: clamp(8px, 1.2vw, 12px);
     }
 
-    .line {
-      width: 70%;
-      height: 1px;
-      background: rgba(238,217,191,0.72);
-      margin: clamp(8px, 1.6svh, 18px) auto clamp(7px, 1.4svh, 14px);
-    }
-
-    .view {
+    .rate-row {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: clamp(6px, 1.6vw, 14px);
-      font-size: clamp(0.48rem, 1svh, 0.72rem);
-      letter-spacing: clamp(0.12em, 0.5vw, 0.3em);
-      color: var(--cream);
+      gap: 10px;
+      color: var(--white);
+      font-size: clamp(0.82rem, 1.6vw, 1.2rem);
+      letter-spacing: clamp(0.22em, 0.7vw, 0.42em);
       font-weight: 800;
-      white-space: nowrap;
       text-transform: uppercase;
+      line-height: 1;
+      white-space: nowrap;
     }
 
-    .arrow {
-      width: clamp(24px, 4.6svh, 36px);
-      height: clamp(24px, 4.6svh, 36px);
-      border: 1px solid rgba(238,217,191,0.8);
+    .play-icon {
+      width: clamp(18px, 2vw, 24px);
+      height: clamp(18px, 2vw, 24px);
+      border: 3px solid var(--white);
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: clamp(0.9rem, 2.4svh, 1.3rem);
-      letter-spacing: 0;
       flex-shrink: 0;
     }
 
-    .bottom-line {
-      margin-top: clamp(14px, 2.5svh, 34px);
-      color: var(--white-soft);
-      text-align: center;
+    .play-icon::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 7px solid var(--white);
+      margin-left: 2px;
     }
 
-    .bottom-script {
-      font-family: "Ignogito", "Manrope", sans-serif;
-      font-size: clamp(1.15rem, 2.8svh, 1.85rem);
-      color: var(--cream);
-      line-height: 1.1;
-      font-weight: normal;
-      font-style: normal;
-      letter-spacing: 0.01em;
+    .tap-bar {
+      width: 100vw;
+      min-height: clamp(58px, 7vh, 78px);
+      background: var(--footer-olive);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      padding:
+        0
+        clamp(18px, 4vw, 42px)
+        env(safe-area-inset-bottom);
+      margin-top: auto;
     }
 
-    .bottom-bold {
-      margin-top: 6px;
-      font-size: clamp(0.54rem, 1.1svh, 0.88rem);
-      letter-spacing: clamp(0.18em, 0.65vw, 0.46em);
+    .tap-bar span {
+      font-size: clamp(0.9rem, 2vw, 1.25rem);
+      letter-spacing: clamp(0.22em, 0.8vw, 0.44em);
       font-weight: 800;
-      color: var(--white-soft);
+      text-align: center;
       text-transform: uppercase;
+      line-height: 1.4;
     }
 
     .overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.75);
+      background: rgba(0, 0, 0, 0.78);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       z-index: 99;
@@ -344,26 +300,25 @@
 
     .overlay-panel {
       width: min(100%, 900px);
-      height: 88svh;
-      background: var(--white-soft);
+      height: 88dvh;
+      background: var(--bg);
       border-radius: 18px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
     }
 
     .overlay-bar {
-      height: 58px;
+      min-height: 58px;
       padding: 0 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(147,123,103,0.24);
+      background: var(--button-olive);
+      color: var(--white);
       font-weight: 800;
-      color: var(--dark-olive);
       flex-shrink: 0;
-      background: var(--cream);
     }
 
     .close {
@@ -371,240 +326,291 @@
       height: 36px;
       border: none;
       border-radius: 50%;
-      background: var(--brown);
+      background: var(--card-brown);
+      color: var(--white);
       cursor: pointer;
       font-size: 22px;
-      color: var(--white-soft);
+      line-height: 1;
     }
 
     iframe {
       width: 100%;
       height: 100%;
       border: none;
-      background: var(--white-soft);
+      background: var(--bg);
     }
 
-    /* Better mobile fit */
-    @media (max-width: 640px) {
-      html,
-      body {
-        height: auto;
-        min-height: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-      }
-
-      .page {
-        min-height: 100dvh;
-        height: auto;
-        padding:
-          max(18px, env(safe-area-inset-top))
-          0
-          calc(28px + env(safe-area-inset-bottom));
-        align-items: flex-start;
-        overflow-x: hidden;
-        overflow-y: visible;
-      }
-
-      .poster {
+    @media (max-width: 700px) {
+      .content {
         width: 100%;
-        min-height: 100dvh;
-        height: auto;
-        justify-content: flex-start;
-        padding-top: 24px;
-        padding-bottom: 30px;
+        padding:
+          max(34px, env(safe-area-inset-top))
+          20px
+          0;
+      }
+
+      .logo-wrap {
+        margin-top: clamp(10px, 2vh, 24px);
+        margin-bottom: clamp(48px, 6vh, 68px);
       }
 
       .brand-logo {
-        width: min(250px, 68vw);
-        max-height: 118px;
-        transform: translateX(-26px);
+        width: min(330px, 70vw);
       }
 
-      .experience-box {
-        width: 91%;
-        margin-top: 38px;
-        border-radius: 78px 78px 22px 22px;
-        padding: 30px 14px 22px;
+      .headline {
+        font-size: clamp(2.15rem, 10.4vw, 3.6rem);
       }
 
-      .choose {
-        margin-bottom: 26px;
+      .subline {
+        margin-top: 10px;
+        font-size: clamp(0.82rem, 3.2vw, 1.1rem);
+        letter-spacing: 0.42em;
       }
 
-      .choose-small {
-        font-size: 0.68rem;
-        letter-spacing: 0.34em;
-      }
-
-      .choose-big {
-        font-size: clamp(3.25rem, 13vw, 4.45rem);
-        letter-spacing: -0.06em;
+      .presence-pill {
+        margin-top: 24px;
+        min-width: min(540px, 82vw);
+        min-height: 56px;
+        font-size: clamp(1.5rem, 6vw, 2.15rem);
       }
 
       .cards {
-        gap: 12px;
-        margin-top: 10px;
+        width: 100%;
+        gap: 22px;
+        margin-top: 48px;
+        margin-bottom: 52px;
       }
 
       .card {
-        height: clamp(245px, 34dvh, 300px);
-        border-radius: 72px 72px 16px 16px;
-      }
-
-      .card-photo {
-        border-radius: 72px 72px 16px 16px;
-      }
-
-      .monogram {
-        width: 52px;
-        height: 52px;
-        top: -25px;
+        height: clamp(300px, 54vw, 390px);
+        border-radius: 46% 46% 24px 24px / 30% 30% 24px 24px;
       }
 
       .card-content {
-        bottom: 20px;
+        bottom: 26px;
+        padding: 0 10px;
       }
 
-      .card-content h3 {
-        font-size: clamp(2rem, 8vw, 2.55rem);
+      .card-title {
+        font-size: clamp(2.35rem, 9vw, 3.4rem);
       }
 
-      .card-content p {
-        font-size: 0.56rem;
-        letter-spacing: 0.28em;
-      }
-
-      .line {
+      .card-line {
+        height: 2px;
         width: 72%;
-        margin: 12px auto 11px;
       }
 
-      .view {
-        font-size: 0.49rem;
-        letter-spacing: 0.22em;
-        gap: 8px;
+      .rate-row {
+        font-size: clamp(0.66rem, 2.3vw, 0.86rem);
+        letter-spacing: 0.32em;
+        gap: 7px;
       }
 
-      .arrow {
-        width: 32px;
-        height: 32px;
+      .play-icon {
+        width: 18px;
+        height: 18px;
+        border-width: 2px;
       }
 
-      .bottom-line {
-        margin-top: 24px;
-      }
-
-      .bottom-script {
-        font-size: clamp(1.25rem, 5.2vw, 1.55rem);
-      }
-
-      .bottom-bold {
-        font-size: 0.58rem;
-        letter-spacing: 0.38em;
+      .play-icon::before {
+        border-top-width: 4px;
+        border-bottom-width: 4px;
+        border-left-width: 6px;
       }
     }
 
-    @media (max-width: 390px) {
+    @media (max-width: 430px) {
+      .content {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
       .brand-logo {
-        width: min(235px, 66vw);
-        transform: translateX(-22px);
+        width: min(300px, 72vw);
       }
 
-      .experience-box {
-        width: 92%;
-        margin-top: 32px;
-        padding-left: 12px;
-        padding-right: 12px;
+      .logo-wrap {
+        margin-bottom: 42px;
       }
 
-      .choose-big {
-        font-size: clamp(3rem, 12vw, 4rem);
+      .headline {
+        font-size: clamp(1.9rem, 10vw, 3rem);
+      }
+
+      .subline {
+        font-size: 0.74rem;
+        letter-spacing: 0.34em;
+      }
+
+      .presence-pill {
+        min-height: 50px;
+        min-width: 82vw;
+        padding: 0 18px;
+        font-size: clamp(1.35rem, 6.4vw, 1.85rem);
+      }
+
+      .cards {
+        gap: 14px;
+        margin-top: 42px;
+        margin-bottom: 46px;
       }
 
       .card {
-        height: clamp(230px, 33dvh, 285px);
+        height: clamp(250px, 62vw, 305px);
+        border-radius: 44% 44% 20px 20px / 28% 28% 20px 20px;
       }
 
-      .view {
-        font-size: 0.44rem;
-        letter-spacing: 0.16em;
+      .card-content {
+        bottom: 22px;
       }
 
-      .arrow {
-        width: 28px;
-        height: 28px;
+      .card-title {
+        font-size: clamp(2rem, 10vw, 2.7rem);
+      }
+
+      .rate-row {
+        font-size: 0.58rem;
+        letter-spacing: 0.24em;
+      }
+
+      .tap-bar span {
+        font-size: 0.78rem;
+        letter-spacing: 0.28em;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .cards {
+        gap: 10px;
+      }
+
+      .card {
+        height: 235px;
+      }
+
+      .card-title {
+        font-size: 1.9rem;
+      }
+
+      .rate-row {
+        font-size: 0.52rem;
+        letter-spacing: 0.18em;
+      }
+
+      .play-icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    @media (min-width: 900px) and (max-height: 850px) {
+      .content {
+        padding-top: 28px;
+      }
+
+      .logo-wrap {
+        margin-top: 10px;
+        margin-bottom: 42px;
+      }
+
+      .brand-logo {
+        width: 300px;
+      }
+
+      .hero-copy {
+        margin-bottom: 22px;
+      }
+
+      .headline {
+        font-size: 3.7rem;
+      }
+
+      .presence-pill {
+        margin-top: 22px;
+        min-height: 54px;
+        font-size: 2rem;
+      }
+
+      .cards {
+        margin-top: 42px;
+        margin-bottom: 36px;
+      }
+
+      .card {
+        height: 350px;
       }
     }
   </style>
 </head>
 
 <body>
-  <section class="page">
-    <div class="poster">
+  <main class="page">
+    <section class="content">
 
-      <div class="brand">
-        <img
-          src="Lumaa Logo.png"
-          alt="Lumaa Salon"
-          class="brand-logo"
+      <div class="logo-wrap">
+        <img src="Lumaa Logo.png" alt="Lumaa Salon" class="brand-logo" />
+      </div>
+
+      <section class="hero-copy">
+        <h1 class="headline">The world will adjust</h1>
+        <div class="subline">BE BOLD – BE YOU</div>
+
+        <div class="presence-pill">Choose Your Presence</div>
+      </section>
+
+      <section class="cards" aria-label="Choose rate card">
+        <article
+          class="card"
+          role="button"
+          tabindex="0"
+          onclick="openPDF('men')"
+          onkeydown="if(event.key==='Enter')openPDF('men')"
+          aria-label="Open men rate card"
         >
+          <img src="men.jpg" alt="Men Rate Card" />
+          <div class="card-content">
+            <div class="card-title">men</div>
+            <div class="card-line"></div>
+            <div class="rate-row">
+              <span>Rate Card</span>
+              <span class="play-icon"></span>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="card"
+          role="button"
+          tabindex="0"
+          onclick="openPDF('women')"
+          onkeydown="if(event.key==='Enter')openPDF('women')"
+          aria-label="Open women rate card"
+        >
+          <img src="women.jpg" alt="Women Rate Card" />
+          <div class="card-content">
+            <div class="card-title">women</div>
+            <div class="card-line"></div>
+            <div class="rate-row">
+              <span>Rate Card</span>
+              <span class="play-icon"></span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <div class="tap-bar">
+        <span>TAP ON ANY OPTION ABOVE TO SEE THE MENU!</span>
       </div>
 
-      <div class="experience-box">
-        <div class="choose">
-          <div class="choose-small">CHOOSE YOUR</div>
-          <div class="choose-big">Presence</div>
-        </div>
-
-        <div class="cards">
-
-          <article class="card" onclick="openPDF('men')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openPDF('men')">
-            <div class="monogram">
-              <img src="Lumaa Logo Fav Icon- Olive Green.jpg" alt="Lumaa Icon">
-            </div>
-            <div class="card-photo">
-              <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&q=90" alt="Men Rate Card">
-            </div>
-            <div class="card-content">
-              <h3>men</h3>
-              <p>Rate Card</p>
-              <div class="line"></div>
-              <div class="view">View Rate Card <span class="arrow">→</span></div>
-            </div>
-          </article>
-
-          <article class="card" onclick="openPDF('women')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openPDF('women')">
-            <div class="monogram">
-              <img src="Lumaa Logo Fav Icon- Olive Green.jpg" alt="Lumaa Icon">
-            </div>
-            <div class="card-photo">
-              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&q=90" alt="Women Rate Card">
-            </div>
-            <div class="card-content">
-              <h3>women</h3>
-              <p>Rate Card</p>
-              <div class="line"></div>
-              <div class="view">View Rate Card <span class="arrow">→</span></div>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="bottom-line">
-          <div class="bottom-script">The world will adjust.</div>
-          <div class="bottom-bold">BE BOLD. BE YOU.</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
+    </section>
+  </main>
 
   <div class="overlay" id="overlay">
     <div class="overlay-panel">
       <div class="overlay-bar">
         <span id="overlayTitle">Service Rate Card</span>
-        <button class="close" onclick="closePDF()">×</button>
+        <button class="close" onclick="closePDF()" aria-label="Close">×</button>
       </div>
       <iframe id="pdfFrame" src=""></iframe>
     </div>
@@ -627,6 +633,8 @@
 
     function openPDF(type) {
       const pdf = pdfs[type];
+
+      if (!pdf) return;
 
       if (isIOS()) {
         window.location.href = pdf.file;
