@@ -79,10 +79,10 @@
 
     .brand-logo {
       position: absolute;
-      top: 7.2cqw;
+      top: 7.8cqw;
       left: 50%;
-      transform: translateX(-50%);
-      width: 56cqw;
+      transform: translateX(calc(-50% - 1.5cqw));
+      width: 52cqw;
       height: auto;
       display: block;
       object-fit: contain;
@@ -342,7 +342,6 @@
       background: var(--bg);
     }
 
-    /* Mobile full-height correction */
     @media (max-width: 700px) {
       .poster {
         width: 100vw;
@@ -351,9 +350,11 @@
       }
 
       .brand-logo {
-        top: 8.5dvh;
-        width: 62vw;
-        max-width: 310px;
+        top: 8.6dvh;
+        left: 50%;
+        transform: translateX(calc(-50% - 10px));
+        width: 56vw;
+        max-width: 280px;
       }
 
       .headline {
@@ -434,8 +435,9 @@
 
     @media (max-width: 430px) {
       .brand-logo {
-        top: 8.2dvh;
-        width: 64vw;
+        top: 8.4dvh;
+        width: 58vw;
+        transform: translateX(calc(-50% - 8px));
       }
 
       .headline {
