@@ -342,61 +342,148 @@
       background: var(--bg);
     }
 
-    @media (max-aspect-ratio: 2/3) {
+    /* Mobile full-height correction */
+    @media (max-width: 700px) {
       .poster {
         width: 100vw;
+        height: 100dvh;
+        aspect-ratio: auto;
       }
-    }
 
-    @media (min-aspect-ratio: 2/3) {
-      .poster {
-        width: min(100vw, 66.6667dvh);
+      .brand-logo {
+        top: 8.5dvh;
+        width: 62vw;
+        max-width: 310px;
+      }
+
+      .headline {
+        top: 31.5dvh;
+        font-size: 8vw;
+        width: 94vw;
+      }
+
+      .subline {
+        top: 37.8dvh;
+        font-size: 2.6vw;
+        letter-spacing: 0.42em;
+      }
+
+      .presence-pill {
+        top: 42.2dvh;
+        width: 58vw;
+        height: 5.2dvh;
+        min-height: 40px;
+        font-size: 4vw;
+      }
+
+      .cards {
+        top: 51.5dvh;
+        width: 84vw;
+        gap: 4vw;
+      }
+
+      .card {
+        height: 31.5dvh;
+        max-height: 300px;
+        min-height: 240px;
+        border-radius: 46% 46% 22px 22px / 31% 31% 22px 22px;
+      }
+
+      .card-title {
+        font-size: 7.4vw;
+      }
+
+      .card-line {
+        height: 2px;
+        width: 66%;
+        margin-top: 1.2dvh;
+        margin-bottom: 1dvh;
+      }
+
+      .rate-row {
+        font-size: 1.55vw;
+        letter-spacing: 0.28em;
+        gap: 1vw;
+      }
+
+      .play-icon {
+        width: 2.4vw;
+        height: 2.4vw;
+        border-width: 0.28vw;
+      }
+
+      .play-icon::before {
+        border-top: 0.45vw solid transparent;
+        border-bottom: 0.45vw solid transparent;
+        border-left: 0.65vw solid var(--white);
+        margin-left: 0.15vw;
+      }
+
+      .tap-bar {
+        top: auto;
+        bottom: 5.5dvh;
+        height: 5.8dvh;
+        min-height: 46px;
+      }
+
+      .tap-bar span {
+        font-size: 1.9vw;
+        letter-spacing: 0.28em;
       }
     }
 
     @media (max-width: 430px) {
       .brand-logo {
-        top: 7cqw;
-        width: 56cqw;
+        top: 8.2dvh;
+        width: 64vw;
       }
 
       .headline {
-        font-size: 7cqw;
+        top: 31dvh;
+        font-size: 7.5vw;
       }
 
       .subline {
-        font-size: 2.35cqw;
-        letter-spacing: 0.42em;
+        top: 37dvh;
+        font-size: 2.4vw;
+        letter-spacing: 0.36em;
       }
 
       .presence-pill {
-        width: 58cqw;
-        font-size: 3.6cqw;
+        top: 41.3dvh;
+        width: 58vw;
+        height: 5dvh;
+        font-size: 3.8vw;
       }
 
       .cards {
-        width: 84cqw;
-        gap: 3.5cqw;
+        top: 50.8dvh;
+        width: 84vw;
+        gap: 4vw;
+      }
+
+      .card {
+        height: 30.8dvh;
+        min-height: 220px;
       }
 
       .card-title {
-        font-size: 5.8cqw;
+        font-size: 7vw;
       }
 
       .rate-row {
-        font-size: 1.22cqw;
-        letter-spacing: 0.28em;
+        font-size: 1.45vw;
+        letter-spacing: 0.22em;
       }
 
-      .play-icon {
-        width: 1.6cqw;
-        height: 1.6cqw;
-        border-width: 0.2cqw;
+      .tap-bar {
+        bottom: 5dvh;
+        height: 5.5dvh;
       }
 
       .tap-bar span {
-        font-size: 1.5cqw;
-        letter-spacing: 0.28em;
+        font-size: 1.75vw;
+        letter-spacing: 0.24em;
       }
     }
   </style>
