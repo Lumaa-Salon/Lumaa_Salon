@@ -79,7 +79,7 @@
 
     .brand-logo {
       position: absolute;
-      top: 7.8cqw;
+      top: 7.2cqw;
       left: 50%;
       transform: translateX(-50%);
       width: 56cqw;
@@ -111,8 +111,8 @@
       width: 86cqw;
       text-align: center;
       font-family: "Manrope", Arial, sans-serif;
-      font-size: 2.2cqw;
-      letter-spacing: 0.48em;
+      font-size: 2.55cqw;
+      letter-spacing: 0.46em;
       font-weight: 400;
       color: var(--headline-brown);
       text-transform: uppercase;
@@ -121,7 +121,7 @@
 
     .presence-pill {
       position: absolute;
-      top: 62.2cqw;
+      top: 62.8cqw;
       left: 50%;
       transform: translateX(-50%);
       width: 54.5cqw;
@@ -141,7 +141,7 @@
 
     .cards {
       position: absolute;
-      top: 76.8cqw;
+      top: 77.4cqw;
       left: 50%;
       transform: translateX(-50%);
       width: 82.5cqw;
@@ -167,6 +167,16 @@
       object-fit: cover;
       object-position: center top;
       display: block;
+    }
+
+    .men-card img {
+      height: 112%;
+      transform: translateY(-8%);
+      object-position: center top;
+    }
+
+    .women-card img {
+      object-position: center top;
     }
 
     .card::after {
@@ -197,7 +207,7 @@
 
     .card-title {
       font-family: "Manrope", Arial, sans-serif;
-      font-size: 5.6cqw;
+      font-size: 5.9cqw;
       font-weight: 800;
       letter-spacing: -0.06em;
       line-height: 0.9;
@@ -217,7 +227,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.9cqw;
+      gap: 0.8cqw;
       font-size: 1.35cqw;
       letter-spacing: 0.36em;
       color: var(--white);
@@ -228,9 +238,9 @@
     }
 
     .play-icon {
-      width: 2.25cqw;
-      height: 2.25cqw;
-      border: 0.28cqw solid var(--white);
+      width: 1.75cqw;
+      height: 1.75cqw;
+      border: 0.22cqw solid var(--white);
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
@@ -242,18 +252,18 @@
       content: "";
       width: 0;
       height: 0;
-      border-top: 0.45cqw solid transparent;
-      border-bottom: 0.45cqw solid transparent;
-      border-left: 0.65cqw solid var(--white);
-      margin-left: 0.18cqw;
+      border-top: 0.34cqw solid transparent;
+      border-bottom: 0.34cqw solid transparent;
+      border-left: 0.5cqw solid var(--white);
+      margin-left: 0.14cqw;
     }
 
     .tap-bar {
       position: absolute;
-      top: 128.6cqw;
+      top: 137.6cqw;
       left: 0;
       width: 100%;
-      height: 6.2cqw;
+      height: 6.5cqw;
       background: var(--footer-olive);
       display: flex;
       align-items: center;
@@ -345,12 +355,17 @@
     }
 
     @media (max-width: 430px) {
+      .brand-logo {
+        top: 7cqw;
+        width: 56cqw;
+      }
+
       .headline {
         font-size: 7cqw;
       }
 
       .subline {
-        font-size: 2cqw;
+        font-size: 2.35cqw;
         letter-spacing: 0.42em;
       }
 
@@ -364,9 +379,19 @@
         gap: 3.5cqw;
       }
 
+      .card-title {
+        font-size: 5.8cqw;
+      }
+
       .rate-row {
         font-size: 1.22cqw;
         letter-spacing: 0.28em;
+      }
+
+      .play-icon {
+        width: 1.6cqw;
+        height: 1.6cqw;
+        border-width: 0.2cqw;
       }
 
       .tap-bar span {
@@ -389,7 +414,7 @@
 
       <section class="cards" aria-label="Choose rate card">
         <article
-          class="card"
+          class="card men-card"
           role="button"
           tabindex="0"
           onclick="openPDF('men')"
@@ -408,7 +433,7 @@
         </article>
 
         <article
-          class="card"
+          class="card women-card"
           role="button"
           tabindex="0"
           onclick="openPDF('women')"
